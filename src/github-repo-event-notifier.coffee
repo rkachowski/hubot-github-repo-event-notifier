@@ -92,6 +92,7 @@ module.exports = (robot) ->
           return false # no match, fail
 
       if filter_parts.length > 0
+        robot.emit eventType, data
         announceRepoEvent data, eventType, (what) ->
           robot.messageRoom room, what
       else
