@@ -63,7 +63,7 @@ module.exports = (robot) ->
     query = querystring.parse(url.parse(req.url).query)
 
     data = req.body
-    robot.logger.debug "github-repo-event-notifier: Received POST to /hubot/gh-repo-events with data = #{inspect data}"
+    console.log "github-repo-event-notifier: Received POST to /hubot/gh-repo-events with data = #{inspect data}"
     room = query.room || process.env["HUBOT_GITHUB_EVENT_NOTIFIER_ROOM"]
     eventType = req.headers["x-github-event"]
     robot.logger.debug "github-repo-event-notifier: Processing event type: \"#{eventType}\"..."
